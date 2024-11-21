@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
-describe('page', () => {
-  it('works', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe('window property', () => {
+  it( 'has expected sub-property', () => {
+    cy.visit( 'http://localhost:3000' );
+    cy.window().its( 'mw' ).should( 'have.property', 'propertyToCheckFor' );
+  } );
+} );
